@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 import models
+import models.attributes as attrs
 
 
 class TestHorseModel(unittest.TestCase):
@@ -8,11 +9,11 @@ class TestHorseModel(unittest.TestCase):
         pass
 
     def test_create_instance(self):
-        id = 0
-        name = '競走馬名'
+        id_ = attrs.ID(0)
+        name = attrs.Name('競走馬名')
         horse = models.Horse(
-            id,
-            name,
+            id_=id_,
+            name=name,
         )
-        self.assertEqual(id, horse.get_id())
-        self.assertEqual(name, horse.get_name())
+        self.assertEqual(id_.get_attr(), horse.get_id())
+        self.assertEqual(name.get_attr(), horse.get_name())
