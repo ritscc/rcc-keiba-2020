@@ -1,3 +1,4 @@
 twitter
 selenium
+chromedriver_binary
 pycrawl
